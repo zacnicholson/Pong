@@ -3,7 +3,7 @@ import os
 
 wn = turtle.Screen()
 wn.title("Pong by @ZacNicholson")
-wn.bgcolor("orange")
+wn.bgcolor("#d4af37")
 wn.setup(width=800, height=600)
 wn.tracer(0)
 
@@ -13,18 +13,18 @@ score_purple = 0
 
 # Paddle A
 paddle_a = turtle.Turtle()
-paddle_a.speed(30)
+paddle_a.speed(100)
 paddle_a.shape("square")
-paddle_a.color("blue")
+paddle_a.color("#1b03a3")
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 paddle_a.penup()
 paddle_a.goto(-350, 0)
 
 # Paddle B
 paddle_b = turtle.Turtle()
-paddle_b.speed(30)
+paddle_b.speed(100)
 paddle_b.shape("square")
-paddle_b.color("purple")
+paddle_b.color("#bc13fe")
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
 paddle_b.goto(350, 0)
@@ -32,9 +32,9 @@ paddle_b.goto(350, 0)
 
 # Ball
 ball = turtle.Turtle()
-ball.speed(30)
-ball.shape("square")
-ball.color("green")
+ball.speed(100)
+ball.shape("circle")
+ball.color("#39ff14")
 ball.penup()
 ball.goto(0, 0)
 ball.dx = -2
@@ -44,11 +44,11 @@ ball.dy = -2
 
 pen = turtle.Turtle()
 pen.speed(0)
-pen.color("white")
+pen.color("#FF6700")
 pen.penup()
 pen.hideturtle()
 pen.goto(0,260)
-pen.write("Player Blue: 0 Player Purple: 0", align="center", font=("Times", 24, "bold"))
+pen.write("Blue: 0 Purple: 0", align="center", font=("Comic Sans MS", 24, "bold"))
 
 
 
@@ -115,7 +115,7 @@ while True:
         ball.dx *= -1
         score_blue += 1
         pen.clear()
-        pen.write(f"Player Blue: {score_blue} Player Purple: {score_purple}", align="center", font=("Times", 24, "bold"))
+        pen.write(f" Blue: {score_blue}  Purple: {score_purple}", align="center", font=("Times", 24, "bold"))
         os.system("afplay sex.wav&")
 
     if ball.xcor() < -390:
@@ -123,7 +123,7 @@ while True:
         ball.dx *= -1
         score_purple += 1
         pen.clear()
-        pen.write(f"Player Blue: {score_blue} Player Purple: {score_purple}", align="center", font=("Times", 24, "bold"))
+        pen.write(f" Blue: {score_blue}  Purple: {score_purple}", align="center", font=("Times", 24, "bold"))
         os.system("afplay sex.wav&")
 
     # Paddle and Ball Collisions
