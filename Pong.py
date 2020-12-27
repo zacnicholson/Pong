@@ -13,7 +13,7 @@ score_purple = 0
 
 # Paddle A
 paddle_a = turtle.Turtle()
-paddle_a.speed(100)
+paddle_a.speed(200)
 paddle_a.shape("square")
 paddle_a.color("#1b03a3")
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
@@ -22,7 +22,7 @@ paddle_a.goto(-350, 0)
 
 # Paddle B
 paddle_b = turtle.Turtle()
-paddle_b.speed(100)
+paddle_b.speed(200)
 paddle_b.shape("square")
 paddle_b.color("#bc13fe")
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
@@ -32,7 +32,7 @@ paddle_b.goto(350, 0)
 
 # Ball
 ball = turtle.Turtle()
-ball.speed(100)
+ball.speed(10)
 ball.shape("circle")
 ball.color("#39ff14")
 ball.penup()
@@ -116,7 +116,7 @@ while True:
         score_blue += 1
         pen.clear()
         pen.write(f" Blue: {score_blue}  Purple: {score_purple}", align="center", font=("Times", 24, "bold"))
-        os.system("afplay sex.wav&")
+        os.system("afplay point.wav&")
 
     if ball.xcor() < -390:
         ball.goto(0, 0)
@@ -124,7 +124,7 @@ while True:
         score_purple += 1
         pen.clear()
         pen.write(f" Blue: {score_blue}  Purple: {score_purple}", align="center", font=("Times", 24, "bold"))
-        os.system("afplay sex.wav&")
+        os.system("afplay point.wav&")
 
     # Paddle and Ball Collisions
     if (ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor()) < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() -40):
